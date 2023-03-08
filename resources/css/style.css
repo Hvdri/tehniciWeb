@@ -14,9 +14,9 @@ body {
     --culoare-fundal: white;
 }
 
-body.dark {
+/* body.dark {
     --culoare-fundal: black;
-}
+} */
 
 body {
     background-color: var(--culoare-fundal);
@@ -24,36 +24,52 @@ body {
 }
 
 
-/*
-PENTRU GRID MAP
+#grid-pagina > *{
+    border: 3px solid green;
+}
+#grid-pagina{
+    display:grid;
+    grid-template-areas: 
+        "z-index-intrebari z-index-intrebari z-index-intrebari"
+    
+                        "z-produse z-produse z-promotii"
+                        "z-fig1 z-orar z-orar"
+                        "z-fig2 z-orar z-orar"
+                        "z-fig3 z-orar z-orar"
+                        "z-anunturi z-anunturi z-anunturi"
+                        "z-welcome z-welcome z-welcome"
+                        ;
+}
 
-[13:36] IRINA CIOCAN
-
-#welcome{​​
+#produse{
     grid-area: z-welcome;
-}​​
-#promotii{​​
+}
+#about{
     grid-area: z-promotii;
-}​​
-#produse{​​
+}
+#contact{
     grid-area: z-produse;
-}​​
-#orar{​​
+}
+
+#orar{
     grid-area: z-orar;
-}​​
-#fig1{​​
+}
+
+#fig1{
     grid-area: z-fig1;
-}​​
-#fig2{​​
+}
+#fig2{
     grid-area: z-fig2;
-}​​
-#fig3{​​
+}
+#fig3{
     grid-area: z-fig3;
-}​​
-#anunturi{​​
+}
+
+#anunturi{
     grid-area: z-anunturi;
-}​​
-#index-intrebari{​​
+}
+
+#index-intrebari{
     grid-area: z-index-intrebari;
-}​​
-*/
+}
+
