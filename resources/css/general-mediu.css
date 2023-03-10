@@ -1,0 +1,22 @@
+html {
+  font-size: 14px;
+  transition: font-size 0.3s linear;
+}
+body {
+  --page-padding: 0.75em;
+  --section-margin: 0.3em;
+  --section-padding: 0.3em;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat("1fr", 3);
+  gap: var(--section-margin);
+  grid-template-areas:
+    "z-acasa z-acasa z-acasa"
+    "z-acasa z-acasa z-acasa"
+    "z-utilizatori-online z-utilizatori-stats z-date-site"
+    "z-calendar z-best-sellers z-best-sellers"
+    "z-anunturi z-best-sellers z-best-sellers"
+    "z-detalii z-detalii z-detalii";
+}

@@ -1,0 +1,233 @@
+html {
+  font-size: 16px;
+  transition: font-size 0.5s linear;
+}
+
+body.dark {
+  --background-color: var(--dark-bg);
+  --background-color-special: var(--color-dark);
+  --secondary-color: var(--special-color-dark);
+  --special-color: var(--special-color-light);
+
+  --text-color: var(--light-bg);
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  padding-left: var(--page-padding);
+  padding-right: var(--page-padding);
+  min-width: 450px;
+}
+
+footer {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  text-align: center;
+  margin-left: calc(-1 * var(--page-padding));
+  margin-right: calc(-1 * var(--page-padding));
+}
+
+footer > a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+footer > a:hover {
+  color: var(--secondary-color);
+}
+
+#top-btn {
+  position: fixed;
+  bottom: 0.8em;
+  opacity: 0.5;
+  right: 0.8em;
+  width: 2rem;
+  box-sizing: border-box;
+  height: 2rem;
+  font-weight: 600;
+  line-height: 2rem;
+  font-size: 23px;
+  text-align: center;
+  border: 1px solid var(--special-color);
+  border-radius: 50%;
+  color: var(--special-color);
+  background: var(--background-color);
+}
+
+#top-btn:hover {
+  text-decoration: none;
+  background-color: var(--special-color);
+  color: var(--background-color);
+  transition: all 0.5s linear;
+  box-shadow: 0px 0px 5px 5px var(--special-color);
+  opacity: 1;
+}
+
+.iframe-container {
+  display: flex;
+  justify-content: center;
+}
+
+div.container-iframe {
+  display: flex;
+  flex-direction: column;
+  padding-top: 4rem;
+}
+div.container-iframe > iframe {
+  display: inline-block;
+  border: 2px solid white;
+}
+
+div.taburi-iframe {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: center;
+  padding-bottom: .25rem;
+  
+}
+
+.link-iframe {
+  box-shadow: 0px 0px 1px 1px aqua;
+  padding: 5px;
+  margin: 5px;
+  border: 1px solid white;
+  border-radius: .25rem;
+
+  color: var(--text-color);
+  background-color: var(--special-color);
+  width: 100px;
+
+}
+
+.link-iframe:hover {
+  transition: all 0.5s linear;
+  background-color: aqua;
+}
+
+.grid > * {
+  border: 3px solid var(--secondary-color);
+  padding: var(--section-padding);
+  /* margin: var(--section-margin); */
+  background-color: var(--background-color-special);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: "1fr, 1fr, 1fr, 1fr";
+  gap: var(--section-margin);
+  grid-template-areas:
+    "z-home z-home z-home z-home"
+    "z-home z-home z-home z-home"
+
+    "z-produse z-produse z-produse z-produse"
+    "z-produse z-produse z-produse z-produse"
+    
+    "z-calendar z-detalii z-detalii z-anunturi"
+
+    "z-utilizatori-online z-utilizatori-stats z-date-site z-date-site"
+    
+}
+
+#home {
+  grid-area: z-home;
+}
+
+#produse {
+  grid-area: z-produse;
+}
+
+#calendar {
+  grid-area: z-calendar;
+}
+
+#anunturi {
+  grid-area: z-anunturi;
+}
+
+#utilizatori-online {
+  grid-area: z-utilizatori-online;
+}
+
+#utilizatori-stats {
+  grid-area: z-utilizatori-stats;
+}
+
+#date-site {
+  grid-area: z-date-site;
+}
+
+#detalii {
+  grid-area: z-detalii;
+}
+
+img {
+  width: 100%;
+  max-width: 800px;
+}
+
+.tabel {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+#tabel-produse caption {
+  font-size: 1.5em;
+  font-weight: bold;
+  padding: 0.5em;                          
+  color: var(--text-color);
+}
+
+#tabel-produse {
+  border: 1px solid var(--special-color);
+  border-radius: 5px;
+  border-collapse: separate;
+}
+
+#tabel-produse td,
+th {
+  border-left: 1px solid var(--special-color);
+  border-top: 1px solid var(--special-color);
+  margin: 5px;
+  padding: 5px;
+}
+
+#tabel-produse th {
+  background-color: var(--special-color);
+  border-top: none;
+}
+
+#tabel-produse td:first-child,
+#tabel-produse th:first-child {
+  border-left: none;
+}
+
+#tabel-produse tr:nth-child(even) {
+  background-color: var(--background-color);
+}
+
+#tabel-produse tr:nth-child(odd) {
+  background-color: var(--background-color-special);
+}
+
+#tabel-produse tr:hover {
+  background-color: var(--secondary-color);
+  transition: background-color 0.5s linear;
+}
+
+#tabel-produse td:hover {
+  background-color: var(--special-color);
+  transition: background-color 0.5s linear;
+}
+
+#tabel-produse td:hover > a {
+  color: var(--background-color);
+  transition: color 0.5s linear;
+}
+
+#tabel-produse tfoot {
+  font-weight: bold;
+  font-style: italic;
+}

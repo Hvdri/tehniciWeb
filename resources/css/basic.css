@@ -1,0 +1,65 @@
+body {
+  --light-bg: #ffffff;
+  --dark-bg: #141313;
+  --color-dark: #252525;
+  --color-light: #f7f4ea;
+
+  --color-light-special: #F7B32B;
+  --color-dark-special: #8d5b4c;
+  --color-special: #fcf6b1;
+
+  --text-color-light: var(--dark-bg);
+  --text-color-dark: var(--light-bg);
+
+  --page-padding: 1.5em;
+  --section-margin: 0.5em;
+  --section-padding: 0.5em;
+}
+
+p {
+  margin: 0.5em;
+}
+
+h1 {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 0.5em;
+}
+
+h2 {
+  font-size: 1.25em;
+  font-weight: bold;
+  margin: 0.5em;
+}
+
+h3 {
+  font-size: 1em;
+  font-weight: bold;
+  margin: 0.5em;
+}
+
+h4 {
+  font-size: 0.75em;
+  font-weight: bold;
+  margin: 0.5em;
+}
+
+h5 {
+  font-size: 0.5em;
+  font-weight: bold;
+  margin: 0.5em;
+}
+
+h6 {
+  font-size: 0.25em;
+  font-weight: bold;
+  margin: 0.5em;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
