@@ -1,14 +1,15 @@
 html {
   font-size: 16px;
   transition: font-size 0.5s linear;
+  font-family: 'Poppins', sans-serif;
+font-family: 'Tilt Neon', cursive;
 }
 
 body.dark {
   --background-color: var(--dark-bg);
   --background-color-special: var(--color-dark);
-  --secondary-color: var(--special-color-dark);
-  --special-color: var(--special-color-light);
-
+  --secondary-color: var(--color-dark-special);
+  --special-color: var(--color-light-special);
   --text-color: var(--light-bg);
 }
 
@@ -24,8 +25,6 @@ footer {
   background-color: var(--background-color);
   color: var(--text-color);
   text-align: center;
-  margin-left: calc(-1 * var(--page-padding));
-  margin-right: calc(-1 * var(--page-padding));
 }
 
 footer > a {
@@ -35,33 +34,6 @@ footer > a {
 
 footer > a:hover {
   color: var(--secondary-color);
-}
-
-#top-btn {
-  position: fixed;
-  bottom: 0.8em;
-  opacity: 0.5;
-  right: 0.8em;
-  width: 2rem;
-  box-sizing: border-box;
-  height: 2rem;
-  font-weight: 600;
-  line-height: 2rem;
-  font-size: 23px;
-  text-align: center;
-  border: 1px solid var(--special-color);
-  border-radius: 50%;
-  color: var(--special-color);
-  background: var(--background-color);
-}
-
-#top-btn:hover {
-  text-decoration: none;
-  background-color: var(--special-color);
-  color: var(--background-color);
-  transition: all 0.5s linear;
-  box-shadow: 0px 0px 5px 5px var(--special-color);
-  opacity: 1;
 }
 
 .iframe-container {
@@ -106,17 +78,92 @@ div.taburi-iframe {
   background-color: aqua;
 }
 
+.link-top {
+  
+  /* align right */
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  display: block;
+  border: 1px solid var(--special-color);
+  rotate: 45deg;
+  margin-bottom: 2rem;
+  margin-right: 2rem;
+  opacity: 0.5;
+
+  transform: all 0.3s ease-in-out ;
+  
+}
+
+.triunghi {
+  width: 0; 
+  height: 0; 
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-bottom: 50px solid var(--special-color);
+  border-bottom-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  rotate: -45deg;
+  align-items: center;
+  margin: .25rem;
+
+  transform: all 0.5s ease-in-out ;
+}
+
+.link-top:hover {
+  opacity: 1;
+  transition: all 0.5s ease-in-out;
+  border: 1px solid var(--light-bg);
+  background-color: var(--special-color);
+}
+
+.link-top:hover .triunghi{
+  transition: all 0.5s ease-in-out;
+  border-bottom: 50px solid var(--dark-bg);
+  /* background: var(--special-color); */
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px solid var(--special-color);
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  
+  text-align: center;
+  border-radius: 6px;
+  padding: 0.25rem;
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  margin-top: 4rem;
+  margin-left: -60px;
+  transform: all 1s ease-in-out ;
+  opacity: 0;
+}
+
+.tooltip:hover .tooltiptext {
+  transition: all 2s ease-in-out;
+  background-color: var(--special-color);
+  color: var(--dark-bg);
+  visibility: visible;
+  opacity: 1;
+  
+}
+
 .grid > * {
   border: 3px solid var(--secondary-color);
-  padding: var(--section-padding);
-  /* margin: var(--section-margin); */
+  padding: 1rem;
   background-color: var(--background-color-special);
 }
 
 .grid {
   display: grid;
-  grid-template-columns: "1fr, 1fr, 1fr, 1fr";
-  gap: var(--section-margin);
+  grid-template-columns: 1fr, 1fr, 1fr, 1fr;
+  gap: 0.5rem;
   grid-template-areas:
     "z-home z-home z-home z-home"
     "z-home z-home z-home z-home"

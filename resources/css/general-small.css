@@ -1,0 +1,50 @@
+html {
+  font-size: 12px;
+  transition: font-size 0.3s linear;
+}
+
+
+
+.grid{
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+  "z-home"
+  "z-home"
+
+  "z-produse"
+  "z-produse"
+  
+  "z-calendar"
+  "z-calendar"
+  "z-calendar"
+  
+  " z-detalii"
+  " z-detalii"
+  " z-detalii"
+  
+  "z-anunturi"
+  "z-anunturi"
+  "z-anunturi"
+
+  "z-utilizatori-online"
+  "z-utilizatori-online"
+  "z-utilizatori-online"
+  
+  " z-utilizatori-stats"
+  " z-utilizatori-stats"
+  " z-utilizatori-stats"
+  
+  " z-date-site"
+  " z-date-site"
+  " z-date-site"
+  
+}
+
+nav {
+  width: 120%;
+}
+
+ul .meniu {
+  display: none;
+}

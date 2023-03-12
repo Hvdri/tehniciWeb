@@ -5,8 +5,8 @@ body {
   --color-light: #f7f4ea;
 
   --color-light-special: #F7B32B;
-  --color-dark-special: #8d5b4c;
-  --color-special: #fcf6b1;
+  --color-dark-special: #ae7a14;
+  --color-special: #ae7a14;
 
   --text-color-light: var(--dark-bg);
   --text-color-dark: var(--light-bg);
