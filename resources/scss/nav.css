@@ -18,9 +18,15 @@ nav {
 
 ul.meniu {
   display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
 }
-
 ul.meniu > li {
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: var(--menu-button-width);
+}
+ul.meniu li {
   display: inline-block;
   text-align: center;
   width: var(--menu-button-width);
@@ -29,6 +35,10 @@ ul.meniu > li {
   background-color: var(--menu-color);
   box-sizing: content-box;
   transition: background-color 0.2s linear;
+}
+ul.meniu li:hover {
+  overflow: visible;
+  background-color: var(--special-color);
 }
 
 ul.submeniu > li {
@@ -39,11 +49,6 @@ ul.submeniu > li {
   background-color: var(--menu-color);
   box-sizing: content-box;
   transition: background-color 0.2s linear;
-}
-
-ul.meniu li:hover {
-  background-color: var(--special-color);
-  overflow: visible;
 }
 
 ul.submeniu {
@@ -68,3 +73,5 @@ ul.meniu > li a {
   color: var(--text-color);
   text-decoration: none;
 }
+
+/*# sourceMappingURL=nav.css.map */

@@ -3,42 +3,29 @@ html {
   transition: font-size 0.3s linear;
 }
 
-
+body {
+  animation: none;
+  transition: none;;
+}
 
 .grid{
-  grid-template-rows: 1fr;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr; 
+  width: 100%;
   grid-template-areas:
-  "z-home"
-  "z-home"
+    "z-home"
+    "z-home"
+    "z-produse"
+    "z-produse"
+    
+    "z-calendar" 
+    "z-detalii"
+    "z-detalii"
+    "z-anunturi"
 
-  "z-produse"
-  "z-produse"
-  
-  "z-calendar"
-  "z-calendar"
-  "z-calendar"
-  
-  " z-detalii"
-  " z-detalii"
-  " z-detalii"
-  
-  "z-anunturi"
-  "z-anunturi"
-  "z-anunturi"
-
-  "z-utilizatori-online"
-  "z-utilizatori-online"
-  "z-utilizatori-online"
-  
-  " z-utilizatori-stats"
-  " z-utilizatori-stats"
-  " z-utilizatori-stats"
-  
-  " z-date-site"
-  " z-date-site"
-  " z-date-site"
-  
+    "z-utilizatori-online"
+    " z-utilizatori-stats" 
+    "z-date-site"
+    
 }
 
 nav {
@@ -46,5 +33,13 @@ nav {
 }
 
 ul .meniu {
+  display: none;
+}
+
+.iframe-container {
+  display: none;
+}
+
+div.taburi-iframe {
   display: none;
 }

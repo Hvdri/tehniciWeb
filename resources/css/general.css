@@ -3,6 +3,7 @@ html {
   transition: font-size 0.5s linear;
   font-family: 'Poppins', sans-serif;
 font-family: 'Tilt Neon', cursive;
+scroll-behavior: smooth;
 }
 
 body.dark {
@@ -18,7 +19,20 @@ body {
   color: var(--text-color);
   padding-left: var(--page-padding);
   padding-right: var(--page-padding);
-  min-width: 450px;
+
+}
+
+figure {
+  display: flex;
+  justify-content: center;
+}
+
+img {
+  object-fit: cover;
+}
+
+#home {
+  border-top: none;
 }
 
 footer {
@@ -105,8 +119,7 @@ div.taburi-iframe {
   border-bottom-right-radius: 2rem;
   rotate: -45deg;
   align-items: center;
-  margin: .25rem;
-
+  margin: .2rem;
   transform: all 0.5s ease-in-out ;
 }
 
@@ -134,7 +147,7 @@ div.taburi-iframe {
   width: 120px;
   
   text-align: center;
-  border-radius: 6px;
+  border-radius: .5rem;
   padding: 0.25rem;
   /* Position the tooltip */
   position: absolute;
@@ -146,7 +159,7 @@ div.taburi-iframe {
 }
 
 .tooltip:hover .tooltiptext {
-  transition: all 2s ease-in-out;
+  transition: all 1s ease-in-out;
   background-color: var(--special-color);
   color: var(--dark-bg);
   visibility: visible;
