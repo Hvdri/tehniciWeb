@@ -5,7 +5,9 @@ html {
 
 body {
   animation: none;
-  transition: none;;
+  transition: none;
+  padding-left: 0rem;
+  padding-right: 0rem;
 }
 
 .grid{

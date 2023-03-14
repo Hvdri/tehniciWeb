@@ -11,7 +11,7 @@ body {
   --text-color-light: var(--dark-bg);
   --text-color-dark: var(--light-bg);
 
-  --page-padding: 1.5em;
+  --page-padding: 5em;
   --section-margin: 0.5em;
   --section-padding: 0.5em;
 }

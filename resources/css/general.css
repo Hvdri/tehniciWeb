@@ -33,10 +33,13 @@ img {
 
 #home {
   border-top: none;
+
 }
 
 footer {
-  background-color: var(--background-color);
+  background-color: #000;
+  width: 100vw;
+  margin-left: -80px;
   color: var(--text-color);
   text-align: center;
 }
@@ -167,6 +170,12 @@ div.taburi-iframe {
   
 }
 
+main section {
+  box-shadow: 0px 0px 10px 0px var(--special-color);
+  border-radius: 0.5rem;
+
+}
+
 .grid > * {
   border: 3px solid var(--secondary-color);
   padding: 1rem;
@@ -176,7 +185,7 @@ div.taburi-iframe {
 .grid {
   display: grid;
   grid-template-columns: 1fr, 1fr, 1fr, 1fr;
-  gap: 0.5rem;
+  grid-gap: 1.5rem;
   grid-template-areas:
     "z-home z-home z-home z-home"
     "z-home z-home z-home z-home"
@@ -188,6 +197,10 @@ div.taburi-iframe {
 
     "z-utilizatori-online z-utilizatori-stats z-date-site z-date-site"
     
+}
+
+i {
+  font-size: 50px;
 }
 
 #home {
@@ -225,6 +238,7 @@ div.taburi-iframe {
 img {
   width: 100%;
   max-width: 800px;
+  min-width: 100px;
 }
 
 .tabel {
@@ -290,4 +304,21 @@ th {
 #tabel-produse tfoot {
   font-weight: bold;
   font-style: italic;
+}
+
+@media screen and (max-width:1000px) and (min-width:701px) {
+  body {
+    padding-left: 2.5rem ;
+    padding-right: 2.5rem ;
+  }
+
+  .grid {
+    grid-gap: 1rem;
+  }
+}
+
+@media screen and (max-width:700px) {
+  .grid {
+    grid-gap: .5rem;
+  }
 }
