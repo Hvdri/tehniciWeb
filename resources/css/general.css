@@ -121,7 +121,6 @@ div.taburi-iframe {
   border-bottom-left-radius: 2rem;
   border-bottom-right-radius: 2rem;
   rotate: -45deg;
-  align-items: center;
   margin: .2rem;
   transform: all 0.5s ease-in-out ;
 }

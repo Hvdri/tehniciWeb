@@ -70,24 +70,34 @@ ul.meniu > li a {
   text-decoration: none;
 }
 
-.home-link{
-  margin-bottom: 100px;
-  
+.home-link i{
+  display: none;  
 }
 
-.home-link p {
-  color: var(--secondary-color);
-  display: inline-block;  
-  font-size: 17px;
-  transform: all 1s linear ;
-}
-
-.home-link:hover p{
-  color: #fff;
-  transition: all 1s linear;
-}
 
 @media screen and (max-width:1000px) and (min-width:701px) {
+  
+  .home-link i{
+    display: inline;
+  }
+  
+  .home-link{
+    margin-bottom: 100px;
+    
+  }
+  
+  .home-link p {
+    color: var(--secondary-color);
+    display: inline-block;  
+    font-size: 17px;
+    transform: all 1s linear ;
+  }
+  
+  .home-link:hover p{
+    color: #fff;
+    transition: all 1s linear;
+  }
+  
   nav {
     width: calc(100vw);
     margin-left: calc(-1 * 2.5rem);
