@@ -22,6 +22,10 @@ body {
 
 }
 
+#watermark {
+  display: none;
+}
+
 figure {
   display: flex;
   justify-content: center;

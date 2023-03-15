@@ -42,16 +42,20 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Tilt+Neon&display=swap" rel="stylesheet">
     
-
+    <link rel="stylesheet" href="./resources/scss/css-printare.css" type="text/css" media="print" />
 </head>
 
 <body class="dark">
-
+    <p id="watermark"></p>
     <header>
         <nav>
             
             <!-- <h1>Coffee And Love - Magazin De Cafea</h1> -->
-            
+            <label id="hamburger" for="ch-menu">
+                <i class="fa fa-bars fa-2x" alt="menu"></i>
+            </label>
+            <input id="ch-menu" type="checkbox">
+
             <ul class="meniu">
                 <li>
                     <a href="#home" class="home-link">
@@ -309,11 +313,11 @@
     </main>
     
     <footer>
-
         
+        <div class="banner-container">
+        <p id="banner">Acesta este un proiect scolar!</p>
+        </div>
 
-        <h2><s>Aici nu va fi scris footer.</s> <ins>Footer</ins></h2>
-        
         <section>
             <h3>FAQ - întrebari Frecvente</h3>
 

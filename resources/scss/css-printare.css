@@ -1,0 +1,72 @@
+.grid {
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+h1 {
+  font-size: 2.5em;
+  text-align: center;
+  page-break-after: always;
+  margin-top: 50%;
+}
+
+#watermark {
+  position: fixed;
+  display: block;
+  opacity: 0.3;
+  width: 60vw;
+  height: 10vw;
+  bottom: 0;
+  right: 0;
+}
+
+#watermark::after {
+  padding: 5px;
+  display: block;
+  height: 2cm;
+  width: 100px;
+  border: 2px double var(--accent-color);
+  content: "Marinescu Horia-Andrei";
+}
+
+div.container-iframe,
+video,
+img,
+iframe,
+figure,
+#top-btn,
+nav {
+  display: none;
+}
+
+footer {
+  page-break-before: always;
+}
+
+header {
+  page-break-after: always;
+}
+
+.banner-container {
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  border: 4px double black;
+  width: 50vw;
+}
+
+@page : left {
+  margin-left: 1cm;
+  margin-right: 2cm;
+}
+@page : right {
+  margin-left: 1cm;
+  margin-right: 2cm;
+}
+
+/*# sourceMappingURL=css-printare.css.map */

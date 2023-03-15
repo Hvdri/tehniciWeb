@@ -74,6 +74,10 @@ ul.meniu > li a {
   display: none;  
 }
 
+#hamburger,
+#ch-menu {
+  display: none;
+}
 
 @media screen and (max-width:1000px) and (min-width:701px) {
   
@@ -104,8 +108,44 @@ ul.meniu > li a {
   }
 }
 
+#ch-menu:checked + ul.meniu {
+  transform: all 1s linear;
+}
+
 @media screen and (max-width:700px) {
   nav {
     width: calc(100vw - 0px);
   }
+
+  body {
+    --menu-button-width: 100%;
+  }
+  
+  nav {
+    height: 100%;
+  }
+  
+  #hamburger {
+    display: flex;
+    height: var(--menu-height);
+    cursor: pointer;
+    align-items: center;
+    padding-left: 3rem;
+  }
+  
+  ul.meniu {
+    display: none;
+  }
+
+  ul.meniu li{
+    margin-top: 1rem;
+    box-shadow: 0px 0px 10px 0px black;
+  }
+  
+  #ch-menu:checked + ul.meniu {
+    transition: all 1s linear;
+    display: block;
+  }
+  
+
 }
