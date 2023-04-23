@@ -96,7 +96,7 @@ div.taburi-iframe {
 
 .link-iframe:hover {
   transition: all 0.5s linear;
-  background-color: aqua;
+  background-color: var(--color-dark-special);
 }
 
 .link-top {
@@ -307,6 +307,38 @@ th {
 #tabel-produse tfoot {
   font-weight: bold;
   font-style: italic;
+}
+
+.despre {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+}
+
+video-vtt {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  
+  width: 100%;
+  max-width: 800px;
+  min-width: 350px;
+
+  
+}
+
+video::cue {
+  background: var(--color-dark-special);
+  color: white;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+
+  position: absolute;
+  left: 0;
+  /* background-clip: text; */
+  /* -webkit-background-clip: text; */
 }
 
 @media screen and (max-width:1000px) and (min-width:701px) {

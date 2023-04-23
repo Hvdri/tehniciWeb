@@ -1,0 +1,34 @@
+a {
+    color: var(--special-color);
+    text-decoration: none;
+  
+    &:hover {
+      text-decoration: underline;
+    }
+  
+    &:active {
+      border: 1px solid var(--secondary-color);
+    }
+  
+    &[href^="http"] {
+      background: none;
+  
+      &::before {
+        content: "\2BB3";
+      }
+  
+      &:hover {
+        color: var(--secondary-color);
+      }
+    }
+  }
+
+#main a:hover {
+    background: radial-gradient(
+      var(--secondary-color) 0%,
+      var(--secondary-color) 40%,
+      transparent 80%,
+      transparent 100%
+    );
+  }
+  

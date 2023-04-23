@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ro">
 
 <head>
@@ -14,72 +14,19 @@
     <meta name="theme-color" content="#ffffff">
     
     <title>Magazin de Cafea</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
-    <link rel="apple-touch-icon" sizes="180x180" href="/resources/ico/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/resources/ico/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/resources/ico/favicon-16x16.png">
-    <link rel="manifest" href="/resources/ico/site.webmanifest">
-    <link rel="mask-icon" href="/resources/ico/safari-pinned-tab.svg" color="#5bbad5">
-    <link rel="shortcut icon" href="/resources/ico/favicon.ico">
-    
-    
-    <link rel="stylesheet" href="./resources/css/reset.css" type="text/css" />
-    <link rel="stylesheet" href="./resources/css/basic.css" type="text/css" />
-    
-    <link rel="stylesheet" href="./resources/css/general.css" type="text/css" />
-    
-    
-    
-    <link rel="stylesheet" href="./resources/css/general-tablet.css" type="text/css"
-    media="screen and (max-width:1000px) and (min-width:700px)" /> 
+    <%- include("../fragmente/head.ejs")  %>
 
-    <link rel="stylesheet" href="./resources/css/general-small.css" type="text/css" media="screen and (max-width:700px)" />
     
-    <link rel="stylesheet" href="./resources/css/nav.css" type="text/css" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Tilt+Neon&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="./resources/scss/css-printare.css" type="text/css" media="print" />
 </head>
 
 <body class="dark">
-    <p id="watermark"></p>
-    <header>
-        <nav>
-            
-            <!-- <h1>Coffee And Love - Magazin De Cafea</h1> -->
-            <label id="hamburger" for="ch-menu">
-                <i class="fa fa-bars fa-2x" alt="menu"></i>
-            </label>
-            <input id="ch-menu" type="checkbox">
-
-            <ul class="meniu">
-                <li>
-                    <a href="#home" class="home-link">
-                            <i class="fa fa-home"></i>  
-                            <p>Acasa</p>
-                    </a>
-                </li>
-                
-                <li>
-                    <div href="#produse"><p>Produse</p></div>
-                    <ul class="submeniu">
-                        <li><a href="cafea.html">Cafea</a></li>
-                        <li><a href="cani.html">Căni</a></li>
-                        <li><a href="abonamente.html">Abonamente</a></li>
-                    </ul>
-                </li>
-                
-                <li><a href="oferte.html"><p>Oferte</p></a></li>
-                <li><a href="contact.html"><p>Contact</p></a></li>
-                <li><a href="despre.html"><p>Despre Noi</p></a></li>
-
-            </ul>
-        </nav>
-    </header>
+    <p>
+        Ip:  <%- locals.ip  %>
+    </p>
+    <p>Suma: <%- locals.a+locals.b  %></p>
+    <%- include("../fragmente/header.ejs")  %>
+    
+    
     
     <main class="grid">
             <section id="home">
@@ -312,64 +259,8 @@
 
     </main>
     
-    <footer>
-        
-        <div class="banner-container">
-        <p id="banner">Acesta este un proiect scolar!</p>
-        </div>
-
-        <section>
-            <h3>FAQ - întrebari Frecvente</h3>
-
-            <details>
-            <summary> Cum pot comanda produsele? </summary>
-            <p>Din sectiunea Produse.</p>
-            </details>
-
-            <details>
-                <summary> Unde găsesc ofertele? </summary>
-                <p>In sectiunea Oferte din Produse.</p>
-                </details>
-
-            <details>
-                <summary> Cum funcționeaza abonamentul? </summary>
-                <p>Va puteti abona pentru a primi lunar produsele noastre.</p>
-            </details>
-
-            <details>
-                <summary> Cum mă pot abona? </summary>
-                <p>Din sectiunea Abonamente din Produse.</p>
-            </details>
-            
-            <details>
-                <summary> Exista și magazine fizice unde pot merge să cumpăr produsele? </summary>
-                <p>Din pacate nu exista.</p>
-            </details>
-            
-        </section>
-        
-        
-        <section>
-            <h3>Contact</h3>
-            <address>Adresa: <a href="https://www.google.com/maps/place/Facultatea+de+Matematic%C4%83+%C8%99i+Informatic%C4%83/@44.4355355,26.097398,17z/data=!3m1!4b1!4m6!3m5!1s0x40b1ff472f47f047:0x493984726f0235f9!8m2!3d44.4355355!4d26.0995867!16s%2Fg%2F1td63tdh">Str. Mihai Eminescu, nr. 1, București, România</a></address>
-            <p>Telefon: <a href="tel:+40746434145">0722 222 222</a></p>
-            <p><a href="mailto:horia.marinescu12@gmail.com">Email</a></p>
-            <p><a href="https://wa.me/+40746434145">Whatsapp</a></p>
-            <small><time datetime="2023-02-24">&copy; Coffe And Love - 2022</time></small>
-        </section>
-
-        <div class="tooltip">
-            <a href="#" id="top-btn" class="link-top" >
-                <div class="triunghi">
-                    <div class="tooltiptext">
-                        Inapoi Sus</div>
-                    </div>
-                </div>
-            </a>
-        </div>
-
-    </footer>
+    <%- include("../fragmente/footer.ejs")  %>
 
 </body>
 
-</html> -->
+</html>

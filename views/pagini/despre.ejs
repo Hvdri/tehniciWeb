@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+  <%- include('../fragmente/head.ejs') %>
+</head>
+
+<body class="dark">
+  <p id="watermark"></p>
+  <%- include('../fragmente/header.ejs') %>
+
+
+    <section class="despre">
+      <h2>Despre Noi</h2>
+    <video class="video-vtt" preload="auto" controls>
+      <source src="resources/videos/video.mov" type="video/mov">
+      <source src="resources/videos/video.ogg" type="video/ogg">
+      <track src="resources/videos/video_ro.vtt" kind="subtitles" srclang="ro" label="Romanian" default>
+      <track src="resources/videos/video_en.vtt" kind="subtitles" srclang="en" label="English">
+      Your browser does not support the video tag.
+    </video>
+    </section>
+
+  <% include ('../fragmente/footer.ejs') %>
+</body>
+
+</html>
