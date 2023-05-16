@@ -199,7 +199,6 @@ main section {
     "z-calendar z-detalii z-detalii z-anunturi"
 
     "z-utilizatori-online z-utilizatori-stats z-date-site z-date-site"
-    
 }
 
 i {
@@ -307,6 +306,65 @@ th {
 #tabel-produse tfoot {
   font-weight: bold;
   font-style: italic;
+}
+
+#galerie-statica{
+  padding-left:var(--padding-intern);
+  padding-right:var(--padding-intern);
+}
+
+#grid-galerie {
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ gap: 1rem;
+ margin-top: 2rem;
+ padding: 1rem;
+ counter-reset: nrimag 3;  /* nrimag=3 */
+ box-shadow:  0 0 10px 0 var(--special-color);
+  border-radius: 1rem;
+}
+
+#grid-galerie img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1rem;
+  box-shadow: 0 0 5px 0 var(--special-color);
+}
+
+#grid-galerie figcaption{
+  position: absolute;
+  text-align: center;
+  counter-increment: nrimag 2; /* nrimag+=2 */
+}
+
+#grid-galerie figcaption::before{
+  content: counter(nrimag, upper-alpha) ")";
+}
+
+#grid-galerie picture:hover ~ .galerie-caption{
+  transform: scale(2);
+  transition: 1.1s ease-in-out;
+  padding-top: .25rem;
+}
+
+#grid-galerie picture:hover{
+
+  filter: contrast(2);
+  transition: 1.1s ease-in-out;
+  
+}
+
+@media screen and (max-width:1000px) and (min-width:701px) {
+  #grid-galerie {
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+
+@media screen and (max-width:700px) {
+  #grid-galerie {
+    grid-template-columns: repeat(1,1fr);
+  }
 }
 
 .despre {

@@ -1,39 +1,45 @@
 {
-	"cale_galerie":"resurse/imagini/galerie",
+	"cale_galerie":"resources/images/galerie-statica",
 	"imagini": [
 		{
-			"fisier":"briose-frisca.png",
-			"descriere":"Brioșe",
-			"luni":["martie","februarie","noiembrie"]
+			"fisier":"1.jpg",
+			"descriere":"Cafea",
+            "alt" : "imagine cafea",
+			"luni":["ianuarie","februarie","iunie"]
 		},
 		{
-			"fisier":"clatite.png",
-			"descriere":"Clătite cu dulceață",
+			"fisier":"1.jpg",
+			"descriere":"Cafea2",
+            "alt" : "imagine cafea",
 			"luni":["ianuarie","februarie","iunie"]
 			
 		},
 		{
-			"fisier":"gogosi.png",
-			"descriere":"Gogoși glazurate",
+			"fisier":"1.jpg",
+			"descriere":"Cafea3",
+            "alt" : "imagine cafea",
 			"luni":["ianuarie","noiembrie","iunie","martie"]
 		},
 		{
-			"fisier":"tort-scortisoara.png",
-			"descriere":"Tort cu scorțisoară",
-			
+			"fisier":"1.jpg",
+			"descriere":"Cafea4",
+            "alt" : "imagine cafea",
 			"luni":["noiembrie"]
 		},
 		{
-			"fisier":"prajitura-ciocolata.png",
-			"descriere":"Prăjitură cu ciocolată"
+			"fisier":"1.jpg",
+			"descriere":"Cafea5",
+            "alt" : "imagine cafea"
 		},
 		{
-			"fisier":"tarta-afine.png",
-			"descriere":"Tartă cu afine"
+			"fisier":"1.jpg",
+			"descriere":"Cafea6",
+            "alt" : "imagine cafea"
 		},
 		{
-			"fisier":"tort-trandafiri.png",
-			"descriere":"Tort special"
+			"fisier":"1.jpg",
+			"descriere":"Cafea7",
+            "alt" : "imagine cafea"
 		}
 	]
 }

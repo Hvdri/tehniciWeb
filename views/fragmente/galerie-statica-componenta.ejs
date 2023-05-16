@@ -1,0 +1,18 @@
+<div id="grid-galerie">
+    <% for (let imag of locals.imagini) { %>
+  
+    <figure>
+      <picture>
+        <source srcset="<%- imag.fisier_mediu %>" media="(max-width:1000px)" />
+        <source srcset="<%- imag.fisier_mic %>" media="(max-width:500px)" />
+  
+        <img class="galerie-img" src="<%- imag.fisier %>" alt="imagine">
+      </picture>
+      <figcaption class="galerie-caption"><%- imag.descriere %></figcaption>
+    </figure>
+
+    <div></div>
+  
+  
+    <% } %>
+  </div>
