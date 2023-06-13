@@ -1,0 +1,47 @@
+$fonts :  'Poppins', 'Tilt Neon', 'sans-serif';
+
+@use '../../node_modules/bootstrap/scss/bootstrap.scss' with (
+  $primary: rgb(247, 179, 43),
+  $secondary: rgb(174, 122, 20),
+  $body-bg: rgb(255, 255, 255),
+  $grid-breakpoints: (
+    xs: 0,
+    sm: 500px,
+    md: 700px,
+    lg: 1000px,
+    xl: 1200px,
+    xxl: 1400px,
+  ),
+
+  $input-group-addon-bg: rgb(247, 179, 43),
+  $input-group-addon-border-color: rgb(174, 122, 20),
+  $input-group-addon-color: rgb(255, 255, 255),
+  $container-max-widths: (
+    sm: 470px,
+    md: 660px,
+    lg: 940px,
+    xl: 1140px,
+    xxl: 1320px,
+  ),
+
+  $border-radius: 0.3rem,
+  $border-radius-sm: 0.2rem,
+  $border-radius-lg: 0.5rem,
+  $border-radius-xl: 1rem,
+  $border-radius-2xl: 2rem,
+  $border-radius-pill: 50rem,
+
+  $display-font-sizes: (
+    1: 1.5rem,
+    2: 1.25rem,
+    3: 1rem,
+    4: 0.75rem,
+    5: 0.5rem,
+    6: 0.25rem,
+  ),
+
+  $font-family-base: $fonts,
+
+  $form-range-thumb-width: 1.5rem,
+  $input-height: 1rem
+);

@@ -2,15 +2,16 @@ const express = require("express");
 const fs = require("fs");
 const path = require("path");
 const sharp = require("sharp");
+const sass = require("sass");
 
-obGlobal={
-  obErori:null,
-  obImagini:null,
+obGlobal = {
+  obErori: null,
+  obImagini: null,
   folderScss: path.join(__dirname, "resources/scss"),
   folderCss: path.join(__dirname, "resources/css"),
-  folderBackup: path.join(__dirname, "backup"), 
-  optiuniMeniu:[]
-}
+  folderBackup: path.join(__dirname, "backup"),
+  optiuniMeniu: [],
+};
 
 app = express();
 console.log("Folder proiect", __dirname);
@@ -20,74 +21,66 @@ console.log("Director de lucru", process.cwd());
 const folderScss = path.join(__dirname, "resources/scss");
 const folderCss = path.join(__dirname, "resources/css");
 
-vectorFoldere=["temp", "temp1", "backup"]
-for (let folder of vectorFoldere){
-    //let caleFolder=__dirname+"/"+folder;
-    let caleFolder=path.join(__dirname, folder)
-    if (! fs.existsSync(caleFolder)){
-        fs.mkdirSync(caleFolder);
-    }
-
+vectorFoldere = ["temp", "temp1", "backup"];
+for (let folder of vectorFoldere) {
+  //let caleFolder=__dirname+"/"+folder;
+  let caleFolder = path.join(__dirname, folder);
+  if (!fs.existsSync(caleFolder)) {
+    fs.mkdirSync(caleFolder);
+  }
 }
 
-function compileazaScss(caleScss, caleCss){
-  console.log("cale:",caleCss);
-  if(!caleCss){
-      // TO DO
-      // let vectorCale=caleScss.split("\\")
-      // let numeFisExt=vectorCale[vectorCale.length-1];
-      let numeFisExt=path.basename(caleScss);
-      let numeFis=numeFisExt.split(".")[0]   /// "a.scss"  -> ["a","scss"]
-      caleCss=numeFis+".css";
-  }
-  
-  if (!path.isAbsolute(caleScss))
-      caleScss=path.join(obGlobal.folderScss,caleScss )
-  if (!path.isAbsolute(caleCss))
-      caleCss=path.join(obGlobal.folderCss,caleCss )
-  
+function compileazaScss(caleScss, caleCss) {
+  if (!caleCss) {
+    let numeFisExt = path.basename(caleScss);
 
-  let caleBackup=path.join(obGlobal.folderBackup, "resurse/css");
+    let numeFis = numeFisExt.split(".")[0];
+    caleCss = numeFis + ".css";
+  }
+
+  if (!path.isAbsolute(caleScss)) {
+    caleScss = path.join(obGlobal.folderScss, caleScss);
+  }
+  if (!path.isAbsolute(caleCss)) {
+    caleCss = path.join(obGlobal.folderCss, caleCss);
+  }
+
+  let caleBackup = path.join(obGlobal.folderBackup, "resurse/css");
   if (!fs.existsSync(caleBackup)) {
-      fs.mkdirSync(caleBackup,{recursive:true})
+    fs.mkdirSync(caleBackup, { recursive: true });
   }
-  
-  // la acest punct avem cai absolute in caleScss si  caleCss
-  //TO DO
-  // let vectorCale=caleCss.split("\\");
-  // let numeFisCss=vectorCale[vectorCale.length-1]
-  let numeFisCss=path.basename(caleCss);
-  if (fs.existsSync(caleCss)){
-      fs.copyFileSync(caleCss, path.join(obGlobal.folderBackup, "resurse/css",numeFisCss ))// +(new Date()).getTime()
+
+  let numeFisCss = path.basename(caleCss).split(".")[0];
+  if (fs.existsSync(caleCss)) {
+    fs.copyFileSync(
+      caleCss,
+      path.join(caleBackup, numeFisCss + "_" + new Date().getTime() + ".css")
+    );
   }
-  rez=sass.compile(caleScss, {"sourceMap":true});
-  fs.writeFileSync(caleCss,rez.css)
-  //console.log("Compilare SCSS",rez);
-}
-//compileazaScss("a.scss");
-vFisiere=fs.readdirSync(obGlobal.folderScss);
-for( let numeFis of vFisiere ){
-  if (path.extname(numeFis)==".scss"){
-      compileazaScss(numeFis);
-  }
+
+  rez = sass.compile(caleScss, { sourceMap: true });
+  fs.writeFileSync(caleCss, rez.css);
 }
 
+let vScss = fs.readdirSync(obGlobal.folderScss);
+vScss.forEach((numeFis) => {
+  let caleScss = path.join(obGlobal.folderScss, numeFis);
+  compileazaScss(caleScss);
+});
 
-fs.watch(obGlobal.folderScss, function(eveniment, numeFis){
-  console.log(eveniment, numeFis);
-  if (eveniment=="change" || eveniment=="rename"){
-      let caleCompleta=path.join(obGlobal.folderScss, numeFis);
-      if (fs.existsSync(caleCompleta)){
-          compileazaScss(caleCompleta);
-      }
+fs.watch(obGlobal.folderScss, (eveniment, fisier) => {
+  if (eveniment == "change" || eveniment == "rename") {
+    let caleCompleta = path.join(obGlobal.folderScss, fisier);
+    if (fs.existsSync(caleCompleta)) {
+      compileazaScss(caleCompleta);
+    }
   }
-})
-
+});
 
 app.set("view engine", "ejs");
 
 app.use("/resources", express.static(__dirname + "/resources"));
-app.use("/node_modules", express.static(__dirname+"/node_modules"));
+app.use("/node_modules", express.static(__dirname + "/node_modules"));
 
 app.use(/^\/resources(\/[a-zA-Z0-9]*)*$/, function (req, res) {
   afisareEroare(res, 403);
@@ -96,8 +89,6 @@ app.use(/^\/resources(\/[a-zA-Z0-9]*)*$/, function (req, res) {
 app.get(/\.ejs$/, (req, res) => {
   afisEroare(res, "400");
 });
-
-
 
 app.get("/favicon.ico", function (req, res) {
   res.sendFile(__dirname + "/resources/ico/favicon.ico");
@@ -210,13 +201,11 @@ function afisareEroare(
     let text1 = _text || eroare.text;
     let imagine1 = _imagine || eroare.imagine;
     if (eroare.status)
-      res
-        .status(eroare.identificator)
-        .render("pagini/eroare", {
-          titlu: titlu1,
-          text: text1,
-          imagine: imagine1,
-        });
+      res.status(eroare.identificator).render("pagini/eroare", {
+        titlu: titlu1,
+        text: text1,
+        imagine: imagine1,
+      });
     else
       res.render("pagini/eroare", {
         titlu: titlu1,

@@ -1,12 +1,12 @@
 body {
-  --light-bg: #ffffff;
-  --dark-bg: #141313;
-  --color-dark: #252525;
-  --color-light: #f7f4ea;
+  --light-bg: rgb(255, 255, 255);
+  --dark-bg: rgb(20, 19, 19);
+  --color-dark: rgb(37, 37, 37);
+  --color-light: rgb(247, 244, 234);
 
-  --color-light-special: #F7B32B;
-  --color-dark-special: #ae7a14;
-  --color-special: #ae7a14;
+  --color-light-special: rgb(247, 179, 43);
+  --color-dark-special: rgb(174, 122, 20);
+  --color-special: rgb(174, 122, 20);
 
   --text-color-light: var(--dark-bg);
   --text-color-dark: var(--light-bg);

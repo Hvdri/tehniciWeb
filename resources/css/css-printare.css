@@ -10,6 +10,7 @@ a {
 h1 {
   font-size: 2.5em;
   text-align: center;
+  text-decoration: underline;
   page-break-after: always;
   margin-top: 50%;
 }
@@ -17,14 +18,12 @@ h1 {
 #watermark {
   position: fixed;
   display: block;
-  opacity: 0.3;
-  width: 60vw;
-  height: 10vw;
   bottom: 0;
   right: 0;
 }
 
 #watermark::after {
+  opacity: 0.65;
   padding: 5px;
   display: block;
   height: 2cm;
@@ -51,22 +50,11 @@ header {
   page-break-after: always;
 }
 
-.banner-container {
-  position: absolute;
-  right: 0;
-  top: 0;
-
-  border: 4px double black;
-  width: 50vw;
-}
-
 @page : left {
-  margin-left: 1cm;
-  margin-right: 2cm;
+  margin-left: 2.5cm;
+  margin-right: 0.5cm;
 }
 @page : right {
-  margin-left: 1cm;
-  margin-right: 2cm;
+  margin-left: 0.5cm;
+  margin-right: 2.5cm;
 }
-
-/*# sourceMappingURL=css-printare.css.map */

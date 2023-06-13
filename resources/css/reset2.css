@@ -1,0 +1,24 @@
+@charset "UTF-8";
+a {
+  color: var(--special-color);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+a:active {
+  border: 1px solid var(--secondary-color);
+}
+a[href^=http] {
+  background: none;
+}
+a[href^=http]::before {
+  content: "⮳";
+}
+a[href^=http]:hover {
+  color: var(--secondary-color);
+}
+
+#main a:hover {
+  background: radial-gradient(var(--secondary-color) 0%, var(--secondary-color) 40%, transparent 80%, transparent 100%);
+}
