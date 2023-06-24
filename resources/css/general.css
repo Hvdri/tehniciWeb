@@ -372,6 +372,27 @@ video::cue {
   /* -webkit-background-clip: text; */
 }
 
+.box {
+  font-size: 25px;
+  color: white;
+  font-weight: 800;
+  text-align: center;
+  rotate: -45deg;
+  padding-top: 1rem;
+}
+#box1::after {
+  content: "Ip: ::ffff:127.0.0.1";
+  color: white;
+
+  /* mirror the text */
+  display: inline-block;
+  transform: scaleX(-1);
+  rotate: 90deg;
+  margin-left: -11.7rem;
+  padding-bottom: 10rem;
+  padding-right: 3rem;
+}
+
 @media screen and (max-width: 1000px) and (min-width: 701px) {
   body {
     padding-left: 2.5rem;

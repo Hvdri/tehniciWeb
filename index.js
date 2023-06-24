@@ -6,95 +6,97 @@ const sass = require("sass");
 
 const { Client } = require('pg')
 
-var client = new Client({
-  host: 'localhost',
-  port: 5432,
-  database: 'tw',
-  user: 'horia',
-  password: '123',
-})
-client.connect()
+// var client = new Client({
+//   host: 'localhost',
+//   port: 5432,
+//   database: 'tw',
+//   user: 'horia',
+//   password: '123',
+// })
+// client.connect()
 
-app.get('/produse', async (req, res) => {
-  let produse = []
-  let subcategorii = new Set()
+app = express();
 
-  if (req.query.categ) {
-    let categ = req.query.categ
-    rez = await client.query('select * from produse where categorie = $1', [categ])
-    produse = rez.rows
-  } else {
-    rez = await client.query('select * from produse')
-    produse = rez.rows
-  }
+// app.get('/produse', async (req, res) => {
+//   let produse = []
+//   let subcategorii = new Set()
 
-  let min = 0,
-    max = 10000,
-    accesorii = new Set(),
-    chei = [],
-    nume = [],
-    intensitati = new Set()
+//   if (req.query.categ) {
+//     let categ = req.query.categ
+//     rez = await client.query('select * from produse where categorie = $1', [categ])
+//     produse = rez.rows
+//   } else {
+//     rez = await client.query('select * from produse')
+//     produse = rez.rows
+//   }
 
-  rez = await client.query(
-    'SELECT pg_type.typname AS enumtype, pg_enum.enumlabel AS enumlabel FROM pg_type JOIN pg_enum ON pg_enum.enumtypid = pg_type.oid;'
-  )
+//   let min = 0,
+//     max = 10000,
+//     accesorii = new Set(),
+//     chei = [],
+//     nume = [],
+//     intensitati = new Set()
 
-  intensitati.add('Toate')
-  rez.rows.forEach((c) => {
-    if (c.enumtype == 'intensitati') intensitati.add(c.enumlabel)
-  })
+//   rez = await client.query(
+//     'SELECT pg_type.typname AS enumtype, pg_enum.enumlabel AS enumlabel FROM pg_type JOIN pg_enum ON pg_enum.enumtypid = pg_type.oid;'
+//   )
 
-  produse.forEach((produs) => {
-    produs.imagine = '/resurse/imagini/produse' + produs.imagine
+//   intensitati.add('Toate')
+//   rez.rows.forEach((c) => {
+//     if (c.enumtype == 'intensitati') intensitati.add(c.enumlabel)
+//   })
 
-    subcategorii.add(produs.subcategorie)
-    nume.push(produs.nume)
-    if (produs.accesorii)
-      produs.accesorii.split(', ').forEach((acc) => {
-        accesorii.add(acc)
-      })
-    if (produs.descriere)
-      produs.descriere.split(' ').forEach((cuv) => {
-        if (cuv.length > 3) chei.push(cuv)
-      })
-    if (produs.intensitate) intensitati.add(produs.intensitate)
-    if (min > produs.pret) min = produs.pret
-    if (max < produs.pret) max = produs.pret
-  })
+//   produse.forEach((produs) => {
+//     produs.imagine = '/resurse/imagini/produse' + produs.imagine
 
-  res.render('pagini/produse', {
-    categorii: obGlobal.categorii,
-    produse: produse,
-    subcategorii: subcategorii,
-    accesorii: accesorii,
-    chei: chei,
-    min: min,
-    max: max,
-    nume: nume,
-    intensitati: intensitati,
-  })
-})
+//     subcategorii.add(produs.subcategorie)
+//     nume.push(produs.nume)
+//     if (produs.accesorii)
+//       produs.accesorii.split(', ').forEach((acc) => {
+//         accesorii.add(acc)
+//       })
+//     if (produs.descriere)
+//       produs.descriere.split(' ').forEach((cuv) => {
+//         if (cuv.length > 3) chei.push(cuv)
+//       })
+//     if (produs.intensitate) intensitati.add(produs.intensitate)
+//     if (min > produs.pret) min = produs.pret
+//     if (max < produs.pret) max = produs.pret
+//   })
 
-app.get('/produse/:id', (req, res) => {
-  let id = req.params.id
-  let produs = null
-  client.query('select * from produse where id = $1', [id], (err, rez) => {
-    if (err) {
-      afisEroare(res, '500')
-    } else {
-      if (rez.rows.length == 0) {
-        afisEroare(res, '404')
-      } else {
-        produs = rez.rows[0]
-        console.log(produs)
-        res.render('pagini/produs', {
-          categorii: obGlobal.categorii,
-          produs: produs,
-        })
-      }
-    }
-  })
-})
+//   res.render('pagini/produse', {
+//     categorii: obGlobal.categorii,
+//     produse: produse,
+//     subcategorii: subcategorii,
+//     accesorii: accesorii,
+//     chei: chei,
+//     min: min,
+//     max: max,
+//     nume: nume,
+//     intensitati: intensitati,
+//   })
+// })
+
+// app.get('/produse/:id', (req, res) => {
+//   let id = req.params.id
+//   let produs = null
+//   client.query('select * from produse where id = $1', [id], (err, rez) => {
+//     if (err) {
+//       afisEroare(res, '500')
+//     } else {
+//       if (rez.rows.length == 0) {
+//         afisEroare(res, '404')
+//       } else {
+//         produs = rez.rows[0]
+//         console.log(produs)
+//         res.render('pagini/produs', {
+//           categorii: obGlobal.categorii,
+//           produs: produs,
+//         })
+//       }
+//     }
+//   })
+// })
 
 obGlobal = {
   obErori: null,
@@ -105,7 +107,7 @@ obGlobal = {
   optiuniMeniu: [],
 };
 
-app = express();
+
 console.log("Folder proiect", __dirname);
 console.log("Cale fisier", __filename);
 console.log("Director de lucru", process.cwd());
